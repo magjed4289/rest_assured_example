@@ -1,0 +1,14 @@
+{
+  "properties": {
+    "facetCriteria": {
+      "type": "string"
+    },
+    "facetValues": {
+      "items": {
+        "$ref": "#/components/schemas/FacetValue"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}
