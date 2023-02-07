@@ -7,7 +7,7 @@ public class TestConfig {
 
 	private String uri;
 	private String headlessDeliveryUrl;
-	private int siteId;
+	private String siteId;
 	private int port;
 	private String email;
 	private String password;

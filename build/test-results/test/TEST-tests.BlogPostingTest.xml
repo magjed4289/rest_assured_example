@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tests.BlogPostingTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-06T16:13:00" hostname="LFRW0217.local" time="1.976">
-  <properties/>
-  <testcase name="getSiteBlogPostingsPage_matches_schemas" classname="tests.BlogPostingTest" time="1.976"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
