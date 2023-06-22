@@ -28,7 +28,7 @@ public class BlogPostingTest {
 
     @After
     public void tearDown() {
-        RestAssured.delete();
+        RestAssured.reset();
     }
 
     @Test
