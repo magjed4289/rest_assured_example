@@ -83,7 +83,7 @@ public class BlogPostingTest {
         given().header("Accept", "application/json").
         when().
                 get("/sites/"+siteId+"/blog-postings").
-        then().log().body().
-                time(lessThan(5000L));
+        then().
+                time(lessThan(1200L));
     }
 }
