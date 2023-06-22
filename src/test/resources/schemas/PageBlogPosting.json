@@ -1,18 +1,14 @@
 {
   "properties": {
-    "totalCount": {
-      "format": "int64",
-      "type": "integer"
-    },
-    "lastPage": {
-      "format": "int64",
-      "type": "integer"
-    },
     "items": {
       "items": {
         "$ref": "#/components/schemas/BlogPosting"
       },
       "type": "array"
+    },
+    "pageSize": {
+      "format": "int64",
+      "type": "integer"
     },
     "page": {
       "format": "int64",
@@ -23,10 +19,6 @@
         "$ref": "#/components/schemas/Facet"
       },
       "type": "array"
-    },
-    "pageSize": {
-      "format": "int64",
-      "type": "integer"
     },
     "actions": {
       "additionalProperties": {

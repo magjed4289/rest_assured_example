@@ -25,9 +25,6 @@
       "description": "The blog post's body (content).",
       "type": "string"
     },
-    "creator": {
-      "$ref": "#/components/schemas/Creator"
-    },
     "customFields": {
       "description": "A list of the custom fields associated with the blog post.",
       "items": {

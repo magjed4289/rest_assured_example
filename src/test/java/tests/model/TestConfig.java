@@ -6,6 +6,7 @@ import lombok.Data;
 public class TestConfig {
 
 	private String uri;
+	private String headlessAdminUserUrl;
 	private String headlessDeliveryUrl;
 	private String siteId;
 	private int port;
