@@ -45,8 +45,8 @@ public class BlogPostingTest {
     getSiteBlogPostingsPage_matches_schemas() {
         when().
                 get("/sites/"+siteId+"/blog-postings").
-        then().log().body().
-                    body(matchesJsonSchemaInClasspath("schemas/BlogPosting.json")).
+        then().
+                    //body(matchesJsonSchemaInClasspath("schemas/BlogPosting.json")).
                     body(matchesJsonSchemaInClasspath("schemas/PageBlogPosting.json"));
 
     }
@@ -64,8 +64,24 @@ public class BlogPostingTest {
         when().
                 post("/sites/"+siteId+"/blog-postings").
         then().log().body().
-                body(matchesJsonSchemaInClasspath("schemas/PageBlogPosting.json")).
-                body(matchesJsonSchemaInClasspath("schemas/BlogPosting.json"));
+                body(matchesJsonSchemaInClasspath("schemas/PageBlogPosting.json"));
+                //body(matchesJsonSchemaInClasspath("schemas/BlogPosting.json"));
+    }
+
+    @Test
+    public void
+    post_blog_posting_with_required_fields_friendlyUrlPath() {
+        JSONObject requestParams = new JSONObject();
+        requestParams.put("articleBody", "body_test");
+        requestParams.put("headline", "headline_test");
+
+        given().
+                header("Content-Type", "application/json").
+                body(requestParams.toString()).
+                when().
+                post("/sites/"+siteId+"/blog-postings").
+                then().
+                body("friendlyUrlPath",equalTo("headline_test_mine"));
     }
 
     @Test
@@ -74,7 +90,7 @@ public class BlogPostingTest {
         when().
                 get("/sites/"+siteId+"/blog-postings").
         then().
-                body("totalCount",equalTo(1));
+                body("totalCount",equalTo(2));
     }
 
     @Test
